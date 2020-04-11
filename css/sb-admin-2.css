@@ -454,11 +454,12 @@ mark,
   list-style: none;
 }
 
-.list-inline-item {
+.list-inline-item, .list-group-inline-item {
   display: inline-block;
 }
 
-.list-inline-item:not(:last-child) {
+
+.list-inline-item:not(:last-child), .list-group-inline-item:not(:last-child) {
   margin-right: 0.5rem;
 }
 
@@ -5099,24 +5100,33 @@ a.badge-dark:focus, a.badge-dark.focus {
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.list-group-item:first-child {
+.list-group-item-inline {
+  position: relative;
+  display: inline;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.list-group-item:first-child, .list-group-item-inline:first-child {
   border-top-left-radius: 0.35rem;
   border-top-right-radius: 0.35rem;
 }
 
-.list-group-item:last-child {
+.list-group-item:last-child, .list-group-item-inline:last-child {
   margin-bottom: 0;
   border-bottom-right-radius: 0.35rem;
   border-bottom-left-radius: 0.35rem;
 }
 
-.list-group-item.disabled, .list-group-item:disabled {
+.list-group-item.disabled, .list-group-item:disabled, .list-group-item-inline.disabled, .list-group-item-inline:disabled {
   color: #858796;
   pointer-events: none;
   background-color: #fff;
 }
 
-.list-group-item.active {
+.list-group-item.active, .list-group-item-inline.active {
   z-index: 2;
   color: #fff;
   background-color: #4e73df;
